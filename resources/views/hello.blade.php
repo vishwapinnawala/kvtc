@@ -3,11 +3,11 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Education &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+	<title>KVTC</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
+	<meta name="author" content="vishwapinnawala" />
 
 	
 
@@ -26,37 +26,39 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/animate.css')}}">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="assets/css/icomoon.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/icomoon.css')}}">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/bootstrap.css')}}">
 
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/magnific-popup.css')}}">
 
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{asset('import/assets/css/owl.theme.default.min.css')}}">
 
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="assets/css/flexslider.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/flexslider.css')}}">
 
 	<!-- Pricing -->
-	<link rel="stylesheet" href="assets/css/pricing.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/pricing.css')}}">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="{{asset('import/assets/css/style.css')}}">
 
 	<!-- Modernizr JS -->
-	<script src="assets/js/modernizr-2.6.2.min.js"></script>
+	<script src="{{asset('import/assets/js/modernizr-2.6.2.min.js')}}"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
-	<script src="assets/js/respond.min.js"></script>
+	<script src="{{asset('import/assets/js/respond.min.js')}}"></script>
 	<![endif]-->
 
 	</head>
 	<body>
+
+	
 		
 	<div class="fh5co-loader"></div>
 	
@@ -101,9 +103,31 @@
 								</ul>
 							</li>
 							<li><a href="contact.html">Contact</a></li>
-							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+							
+
+
+
+							@if (Route::has('login'))
+                
+                    @auth
+					<li class=""> <a href="{{ url('/dashboard') }}" class="">Dashboard</a></li>
+                    @else
+					<li class=""> <a href="{{ route('login') }}" class="">Log in</a></li>
+
+                        @if (Route::has('register'))
+						<li class=""> <a href="{{ route('register') }}" class="">Register</a></li>
+                        @endif
+                    @endauth                
+            @endif
+
+
+
+
+
 						</ul>
+						
+						
+
 					</div>
 				</div>
 				
@@ -114,7 +138,7 @@
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(assets/images/img_bg_1.jpg);">
+		   	<li style="background-image: url({{asset('import/assets/images/img_bg_1.jpg')}});">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -128,7 +152,7 @@
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(assets/images/img_bg_2.jpg);">
+		   	<li style="background-image: url({{asset('import/assets/images/img_bg_2.jpg')}});">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -142,7 +166,7 @@
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(assets/images/img_bg_3.jpg);">
+		   	<li style="background-image: url({{asset('import/assets/images/img_bg_3.jpg')}});">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -261,7 +285,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(assets/images/img_bg_4.jpg);" data-stellar-background-ratio="0.5">
+	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url({{asset('import/assets/images/img_bg_4.jpg')}});" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -304,7 +328,7 @@
 			<div class="row">
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(assets/images/project-1.jpg);">
+						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-1.jpg')}});">
 						</a>
 						<div class="desc">
 							<h3><a href="#">Web Master</a></h3>
@@ -315,7 +339,7 @@
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(assets/images/project-2.jpg);">
+						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-2.jpg')}});">
 						</a>
 						<div class="desc">
 							<h3><a href="#">Business &amp; Accounting</a></h3>
@@ -326,7 +350,7 @@
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(assets/images/project-3.jpg);">
+						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-3.jpg')}});">
 						</a>
 						<div class="desc">
 							<h3><a href="#">Science &amp; Technology</a></h3>
@@ -337,7 +361,7 @@
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(assets/images/project-4.jpg);">
+						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-4.jpg')}});">
 						</a>
 						<div class="desc">
 							<h3><a href="#">Health &amp; Psychology</a></h3>
@@ -350,7 +374,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-testimonial" style="background-image: url(assets/images/school.jpg);">
+	<div id="fh5co-testimonial" style="background-image: url({{asset('import/assets/images/school.jpg')}});">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
@@ -364,7 +388,7 @@
 						<div class="owl-carousel owl-carousel-fullwidth">
 							<div class="item">
 								<div class="testimony-slide active text-center">
-									<div class="user" style="background-image: url(assets/images/person1.jpg);"></div>
+									<div class="user" style="background-image: url({{asset('import/assets/images/person1.jpg')}});"></div>
 									<span>Mary Walker<br><small>Students</small></span>
 									<blockquote>
 										<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
@@ -373,7 +397,7 @@
 							</div>
 							<div class="item">
 								<div class="testimony-slide active text-center">
-									<div class="user" style="background-image: url(assets/images/person2.jpg);"></div>
+									<div class="user" style="background-image: url({{asset('import/assets/images/person2.jpg')}});"></div>
 									<span>Mike Smith<br><small>Students</small></span>
 									<blockquote>
 										<p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
@@ -382,7 +406,7 @@
 							</div>
 							<div class="item">
 								<div class="testimony-slide active text-center">
-									<div class="user" style="background-image: url(assets/images/person3.jpg);"></div>
+									<div class="user" style="background-image: url({{asset('import/assets/images/person3.jpg')}});"></div>
 									<span>Rita Jones<br><small>Teacher</small></span>
 									<blockquote>
 										<p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
@@ -433,7 +457,7 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url(assets/images/project-1.jpg);"></a>
+						<a href="#" class="blog-img-holder" style="background-image: url({{asset('import/assets/images/project-1.jpg')}});"></a>
 						<div class="blog-text">
 							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
 							<span class="posted_on">March. 15th</span>
@@ -444,7 +468,7 @@
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url(assets/images/project-2.jpg);"></a>
+						<a href="#" class="blog-img-holder" style="background-image: url({{asset('import/assets/images/project-2.jpg')}});"></a>
 						<div class="blog-text">
 							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
 							<span class="posted_on">March. 15th</span>
@@ -455,7 +479,7 @@
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url(assets/images/project-3.jpg);"></a>
+						<a href="#" class="blog-img-holder" style="background-image: url({{asset('import/assets/images/project-3.jpg')}});"></a>
 						<div class="blog-text">
 							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
 							<span class="posted_on">March. 15th</span>
@@ -570,7 +594,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-register" style="background-image: url(assets/images/img_bg_2.jpg);">
+	<div id="fh5co-register" style="background-image: url({{asset('import/assets/images/img_bg_2.jpg')}});">
 		<div class="overlay"></div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 animate-box">
@@ -591,21 +615,21 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url(assets/images/project-5.jpg);"></a>
+				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-5.jpg')}});"></a>
 			</div>
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url(assets/images/project-2.jpg);"></a>
+				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-2.jpg')}});"></a>
 			</div>
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url(assets/images/project-3.jpg);"></a>
+				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-3.jpg')}});"></a>
 			</div>
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url(assets/images/project-4.jpg);"></a>
+				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-4.jpg')}});"></a>
 			</div>
 		</div>
 	</div>
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(assets/images/img_bg_4.jpg);">
+	<footer id="fh5co-footer" role="contentinfo" style="background-image: url({{asset('import/assets/images/img_bg_4.jpg')}});">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
@@ -675,28 +699,28 @@
 	</div>
 	
 	<!-- jQuery -->
-	<script src="assets/js/jquery.min.js"></script>
+	<script src="{{asset('import/assets/js/jquery.min.js')}}"></script>
 	<!-- jQuery Easing -->
-	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="{{asset('import/assets/js/jquery.easing.1.3.js')}}"></script>
 	<!-- Bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="{{asset('import/assets/js/bootstrap.min.js')}}"></script>
 	<!-- Waypoints -->
-	<script src="assets/js/jquery.waypoints.min.js"></script>
+	<script src="{{asset('import/assets/js/jquery.waypoints.min.js')}}"></script>
 	<!-- Stellar Parallax -->
-	<script src="assets/js/jquery.stellar.min.js"></script>
+	<script src="{{asset('import/assets/js/jquery.stellar.min.js')}}"></script>
 	<!-- Carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="{{asset('import/assets/js/owl.carousel.min.js')}}"></script>
 	<!-- Flexslider -->
-	<script src="assets/js/jquery.flexslider-min.js"></script>
+	<script src="{{asset('import/assets/js/jquery.flexslider-min.js')}}"></script>
 	<!-- countTo -->
-	<script src="assets/js/jquery.countTo.js"></script>
+	<script src="{{asset('import/assets/js/jquery.countTo.js')}}"></script>
 	<!-- Magnific Popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/magnific-popup-options.js"></script>
+	<script src="{{asset('import/assets/js/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{asset('import/assets/js/magnific-popup-options.js')}}"></script>
 	<!-- Count Down -->
-	<script src="assets/js/simplyCountdown.js"></script>
+	<script src="{{asset('import/assets/js/simplyCountdown.js')}}"></script>
 	<!-- Main -->
-	<script src="assets/js/main.js"></script>
+	<script src="{{asset('import/assets/js/main.js')}}"></script>
 	<script>
     var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
