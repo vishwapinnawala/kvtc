@@ -56,7 +56,15 @@ class coursescontroller extends Controller
         $nextintake = $request->nextintake;
         $duration = $request->duration;
         $level = $request->level;
-        $imageid = $request->imageid;
+        
+        $imageid = $request->file('imageid');
+
+        $namegen=hexdec(uniqid());
+        $imgextension=strtolower($imageid->getClientOriginalExtension());
+        $imgname=$namegen.'.'.$imgextension;
+        $up_location='image/courses/';
+        $lastimg=$up_location.$imgname;
+        $imageid->move($up_location,$imgname);
 
         $affected = DB::update(
          'update courses set 
@@ -67,7 +75,7 @@ class coursescontroller extends Controller
             duration=?,
             level=?,
             imageid=? 
-          where id = ?', [$id,$name,$description,$nextintake,$duration,$level,$imageid,$id]
+          where id = ?', [$id,$name,$description,$nextintake,$duration,$level,$imgname,$id]
         );
         
         return redirect('courses');

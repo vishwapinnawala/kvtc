@@ -247,7 +247,7 @@
                    <td><input type="text"  name="nextintake" class="form-control" value="{{$data->nextintake}}"></td>
                    <td><input type="text"  name="duration" class="form-control" value="{{$data->duration}}"></td>
                    <td><input type="text"  name="level" class="form-control" value="{{$data->level}}"></td>
-                  <td><input type="file" id="imageid" name="imageid" style="display:" /></td> 
+                  <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:" /></td> 
                    
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">
@@ -264,11 +264,12 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                    <td class="d-none"><input type="text" name="id" class="form-control" value=""></td>
                    <td><input type="text"  name="name" class="form-control" value=""></td>
-                   <td><input type="text"  name="description" class="form-control" value=""></td>
+                   <td><textarea class="form-control" name="description" id="exampleFormControlTextarea1" cols="100" rows="2"></textarea></td>
+
                    <td><input type="text"  name="nextintake" class="form-control" value=""></td>
                    <td><input type="text"  name="duration" class="form-control" value=""></td>
                    <td><input type="text"  name="level" class="form-control" value=""></td>
-                   <td><input type="file" id="imageid" name="imageid" style="display:;" required/></td> 
+                   <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:;" required/></td> 
                    
               
            
