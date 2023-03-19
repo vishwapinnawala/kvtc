@@ -90,7 +90,7 @@
                           <img src="{{asset('import/assets2/images/avatars/avatar-1.png')}}" alt="" class="rounded-circle" width="60" height="60">
                           <div class="ms-3">
                             <h6 class="mb-0 dropdown-user-name">{{$username}}</h6>
-                            <small class="mb-0 dropdown-user-designation text-secondary">{{$uemail}}</small>
+                            <small class="mb-0 dropdown-user-designation text-secondary">{{$email}}</small>
                           </div>
                        </div>
                      </a>
@@ -241,13 +241,13 @@
                     <form method="post">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text"  class="form-control" value="{{$data->id}}"></td>
-                   <td><input type="text" class="form-control" value="{{$data->name}}"></td>
-                   <td><input type="text" class="form-control" value="{{$data->description}}"></td>
-                   <td><input type="text" class="form-control" value="{{$data->nextintake}}"></td>
-                   <td><input type="text" class="form-control" value="{{$data->duration}}"></td>
-                   <td><input type="text" class="form-control" value="{{$data->level}}"></td>
-                   <td><input type="text" class="form-control" value="{{$data->imageid}}"></td> 
+                   <td class="d-none"><input type="text" name="id" class="form-control" value="{{$data->id}}"></td>
+                   <td><input type="text"  name="name" class="form-control" value="{{$data->name}}"></td>
+                   <td><input type="text"  name="description" class="form-control" value="{{$data->description}}"></td>
+                   <td><input type="text"  name="nextintake" class="form-control" value="{{$data->nextintake}}"></td>
+                   <td><input type="text"  name="duration" class="form-control" value="{{$data->duration}}"></td>
+                   <td><input type="text"  name="level" class="form-control" value="{{$data->level}}"></td>
+                   <td><input type="text"  name="imageid" class="form-control" value="{{$data->imageid}}"></td> 
                     
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">
@@ -258,6 +258,25 @@
                     </form>                 
                   </tr>
                 @endforeach
+                <tr>
+                    <form method="post">
+                    @csrf
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                   <td class="d-none"><input type="text" name="id" class="form-control" value=""></td>
+                   <td><input type="text"  name="name" class="form-control" value=""></td>
+                   <td><input type="text"  name="description" class="form-control" value=""></td>
+                   <td><input type="text"  name="nextintake" class="form-control" value=""></td>
+                   <td><input type="text"  name="duration" class="form-control" value=""></td>
+                   <td><input type="text"  name="level" class="form-control" value=""></td>
+                   <td><input type="text"  name="imageid" class="form-control" value=""></td> 
+                    
+                    <td>
+                      <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                       <button type="submit" formaction="/addcourse" class="btn btn-transparent text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update"><i class="bi bi-cloud-upload-fill"></i></button>
+                      </div>
+                    </td>   
+                    </form>                 
+                  </tr>
                   
                   
                  
