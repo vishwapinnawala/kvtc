@@ -239,6 +239,8 @@
                 @foreach($courses as $key => $data)
                   <tr>
                     <form method="post">
+                    @csrf
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                    <td class="d-none"><input type="text"  class="form-control" value="{{$data->id}}"></td>
                    <td><input type="text" class="form-control" value="{{$data->name}}"></td>
                    <td><input type="text" class="form-control" value="{{$data->description}}"></td>

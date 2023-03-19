@@ -48,8 +48,17 @@ Route::get('/courses', function () {
 */
 
 //Route::get('/courses', [coursescontroller::class, 'index']);
-Route::get('/courses', [coursescontroller::class, 'index'])->middleware(['auth', 'verified'])->name('siteconfig');
+//Route::get('/courses', [coursescontroller::class, 'index'])->middleware(['auth', 'verified'])->name('siteconfig');
 
+
+/*
+Route::controller(coursescontroller::class)->group(function () {
+    Route::get('/courses', 'index');
+    Route::post('/updatecourse', 'store');
+})->middleware(['auth', 'verified'])->name('courses');
+*/
+Route::get('/courses', [coursescontroller::class, 'index'])->middleware(['auth', 'verified'])->name('siteconfig');
+Route::post('/updatecourse', [coursescontroller::class, 'store'])->middleware(['auth', 'verified'])->name('siteconfig');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -18,4 +18,11 @@ class coursescontroller extends Controller
                    
         return view('courses', ['username' => $username,'uemail' => $uemail,'courses' => $courses]);
     }
+
+    public function store()
+    {
+    
+        return redirect('courses');
+    }
+    
 }
