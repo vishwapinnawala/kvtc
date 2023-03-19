@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\coursescontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,8 +47,8 @@ Route::get('/courses', function () {
 })->middleware(['auth', 'verified'])->name('courses');
 */
 
-
-Route::get('/courses', [coursescontroller::class, 'index']);
+//Route::get('/courses', [coursescontroller::class, 'index']);
+Route::get('/courses', [coursescontroller::class, 'index'])->middleware(['auth', 'verified'])->name('siteconfig');
 
 
 Route::middleware('auth')->group(function () {

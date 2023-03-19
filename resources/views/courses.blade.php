@@ -89,8 +89,8 @@
                        <div class="d-flex align-items-center">
                           <img src="{{asset('import/assets2/images/avatars/avatar-1.png')}}" alt="" class="rounded-circle" width="60" height="60">
                           <div class="ms-3">
-                            <h6 class="mb-0 dropdown-user-name">123</h6>
-                            <small class="mb-0 dropdown-user-designation text-secondary">123</small>
+                            <h6 class="mb-0 dropdown-user-name">{{$username}}</h6>
+                            <small class="mb-0 dropdown-user-designation text-secondary">{{$uemail}}</small>
                           </div>
                        </div>
                      </a>
@@ -213,7 +213,7 @@
 	<div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center">
-               <h5 class="mb-0">Customer Details</h5>
+               <h5 class="mb-0">Course Details</h5>
                 <form class="ms-auto position-relative">
                   <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
                   <input class="form-control ps-5" type="text" placeholder="search">
@@ -222,37 +222,40 @@
             <div class="table-responsive mt-3">
               <table class="table align-middle">
                 <thead class="table-secondary">
+
+
                   <tr>
-                   <th>#</th>
+                   <th class="d-none">#</th>
                    <th>Course Name</th>
                    <th>Description</th>
                    <th>Next Intake</th>
 		   <th>NVQ Level</th>
+       <th>Duration</th>
                    <th>Add Photo</th>
                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
+                @foreach($courses as $key => $data)
                   <tr>
-                   <td>1</td>
-                    <td>
-                      <div class="d-flex align-items-center gap-3 cursor-pointer">
-                          <div class="">
-                           <p class="mb-0">Automobile</p>
-                         </div>
-                      </div>
-                    </td>
-                    <td>This is a automobile course</td>
-                    <td>2023/10/08</td>
-                    <td>4</td>
-                    <td>Photo</td>
+                    <form method="post">
+                   <td class="d-none"><input type="text"  class="form-control" value="{{$data->id}}"></td>
+                   <td><input type="text" class="form-control" value="{{$data->name}}"></td>
+                   <td><input type="text" class="form-control" value="{{$data->description}}"></td>
+                   <td><input type="text" class="form-control" value="{{$data->nextintake}}"></td>
+                   <td><input type="text" class="form-control" value="{{$data->duration}}"></td>
+                   <td><input type="text" class="form-control" value="{{$data->level}}"></td>
+                   <td><input type="text" class="form-control" value="{{$data->imageid}}"></td> 
+                    
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                       <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="bi bi-cloud-upload-fill"></i></a>
-                       <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                       <button type="submit" formaction="/updatecourse" class="btn btn-transparent text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update"><i class="bi bi-cloud-upload-fill"></i></button>
+                       <button type="submit" formaction="/deletecourse" class="btn btn-transparent text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"><i class="bi bi-trash-fill"></i></button>
                       </div>
-                    </td>
+                    </td>   
+                    </form>                 
                   </tr>
+                @endforeach
                   
                   
                  
