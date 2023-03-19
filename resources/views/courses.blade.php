@@ -57,19 +57,22 @@
             <div class="search-toggle-icon d-xl-none ms-auto">
               <i class="bi bi-search"></i>
             </div>
-            <form class="searchbar d-none d-xl-flex ms-auto">
+            <form id="form1" onsubmit="return false" method="none"  class="searchbar d-none d-xl-flex ms-auto">
                 <div class="position-absolute top-50 translate-middle-y search-icon ms-3"><i class="bi bi-search"></i></div>
-                <input id="searchbar" class="form-control" type="text" placeholder="Type here to search">
-                
+                <input id="searchbar" class="form-control" type="search" placeholder="Type here to search">
+                &nbsp<button id="searchbtn" class="btn btn-primary"  onclick="SEARCH()" type="submit">Search</button> 
                 <div class="position-absolute top-50 translate-middle-y d-block d-xl-none search-close-icon"><i class="bi bi-x-lg"></i></div>
             </form>
+           
             <script>
-              function searchfunc() {
-                 var searchbar=value.getElementById(searchbar);
-                 window.find(searchbar);
-                                    }
+ function  SEARCH(){
+ var Search=document.getElementById("searchbar").value;
+ var result=window.find(Search);
+ if (result == false) {
+  
 
-             
+}
+} 
               </script>
             <div class="top-navbar-right ms-3">
               <ul class="navbar-nav align-items-center">
