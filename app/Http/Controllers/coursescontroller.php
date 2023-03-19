@@ -31,7 +31,7 @@ class coursescontroller extends Controller
 
 
         $imageid = $request->file('imageid');
-        
+
         $namegen=hexdec(uniqid());
         $imgext=strtolower($imageid->getClientOriginalExtension());
         $imgname=$namegen.'.'.$imgext;
@@ -42,7 +42,7 @@ class coursescontroller extends Controller
 
         $affected = DB::update(
          'insert into courses (name,description,nextintake,duration,level,imageid) VALUES (?,?,?,?,?,?)', 
-         [$name,$description,$nextintake,$duration,$level,$imageid]
+         [$name,$description,$nextintake,$duration,$level,$imgname]
         );
         
         return redirect('courses');
