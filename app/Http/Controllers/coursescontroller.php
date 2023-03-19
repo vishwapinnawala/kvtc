@@ -33,8 +33,8 @@ class coursescontroller extends Controller
         $imageid = $request->file('imageid');
 
         $namegen=hexdec(uniqid());
-        $imgext=strtolower($imageid->getClientOriginalExtension());
-        $imgname=$namegen.'.'.$imgext;
+        $imgextension=strtolower($imageid->getClientOriginalExtension());
+        $imgname=$namegen.'.'.$imgextension;
         $up_location='image/courses/';
         $lastimg=$up_location.$imgname;
         $imageid->move($up_location,$imgname);
