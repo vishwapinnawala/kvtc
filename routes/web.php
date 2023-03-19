@@ -38,13 +38,16 @@ Route::get('/siteconfig', function () {
     $uemail=Auth::user()->email;
     return view('siteconfig',compact('username','uemail'));
 })->middleware(['auth', 'verified'])->name('siteconfig');
-
+/*
 Route::get('/courses', function () {
     $username=Auth::user()->name;
     $uemail=Auth::user()->email;
     return view('courses',compact('username','uemail'));
 })->middleware(['auth', 'verified'])->name('courses');
+*/
 
+
+Route::get('/courses', [coursescontroller::class, 'index']);
 
 
 Route::middleware('auth')->group(function () {
