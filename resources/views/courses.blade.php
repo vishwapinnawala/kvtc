@@ -57,7 +57,8 @@
             <div class="search-toggle-icon d-xl-none ms-auto">
               <i class="bi bi-search"></i>
             </div>
-            <form id="form1" onsubmit="return false" method="none"  class="searchbar d-none d-xl-flex ms-auto">
+           
+      <form id="form1" onsubmit="return false" method="none"  class="searchbar d-none d-xl-flex ms-auto">
                 <div class="position-absolute top-50 translate-middle-y search-icon ms-3"><i class="bi bi-search"></i></div>
                 <input id="searchbar" class="form-control" type="search" placeholder="Type here to search">
                 &nbsp<button id="searchbtn" class="btn btn-primary"  onclick="SEARCH()" type="submit">Search</button> 
@@ -72,8 +73,7 @@
   
 
 }
-} 
-              </script>
+} </script>
             <div class="top-navbar-right ms-3">
               <ul class="navbar-nav align-items-center">
               <li class="nav-item dropdown dropdown-large">
@@ -204,7 +204,13 @@
 					</div>
 				</div>
 				<!--end breadcrumb-->
-				<div class="card">
+				
+
+
+
+
+
+	<div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center">
                <h5 class="mb-0">Customer Details</h5>
@@ -258,7 +264,7 @@
         </div>
 						
 				<!--end row-->
- <p><a href="#" class="btn btn-primary" role="button">Save Course Details</a></p>
+ <p><a href="#" class="btn btn-primary" role="button">Save Features Cources</a></p>
 			</main>
        <!--end page main-->
 
@@ -306,7 +312,7 @@
 
 
   <!-- Bootstrap bundle JS -->
-  <script src="{{asset('import/assets2/js/bootstrap.bundle.min.js')}}"></>
+  <script src="{{asset('import/assets2/js/bootstrap.bundle.min.js')}}"></script>
   <!--plugins-->
   <script src="{{asset('import/assets2/js/jquery.min.js')}}"></script>
   <script src="{{asset('import/assets2/plugins/simplebar/js/simplebar.min.js')}}"></script>
