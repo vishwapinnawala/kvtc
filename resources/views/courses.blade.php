@@ -247,8 +247,13 @@
                    <td><input type="text"  name="nextintake" class="form-control" value="{{$data->nextintake}}"></td>
                    <td><input type="text"  name="duration" class="form-control" value="{{$data->duration}}"></td>
                    <td><input type="text"  name="level" class="form-control" value="{{$data->level}}"></td>
-                   <td><input type="text"  name="imageid" class="form-control" value="{{$data->imageid}}"></td> 
-                    
+                   <td><button type="button" id="inputbtn" onClick="clicker()" class="btn btn-primary btn-floating">+<i class="bi bi-file-earmark-image"></i></button></td> 
+                   <input type="file" id="imageid"  style="display:none;" />
+                   <script>
+    function clicker(){
+        document.getElementById('imageid').click();
+    }
+</script>
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">
                        <button type="submit" formaction="/updatecourse" class="btn btn-transparent text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update"><i class="bi bi-cloud-upload-fill"></i></button>
@@ -268,8 +273,13 @@
                    <td><input type="text"  name="nextintake" class="form-control" value=""></td>
                    <td><input type="text"  name="duration" class="form-control" value=""></td>
                    <td><input type="text"  name="level" class="form-control" value=""></td>
-                   <td><input type="text"  name="imageid" class="form-control" value=""></td> 
-                    
+                   <td><button type="button" id="inputbtn" onClick="clicker()" class="btn btn-primary btn-floating">+<i class="bi bi-file-earmark-image"></i></button></td> 
+                   <input type="file" id="theFileInput"  style="display:none;" />
+                   <script>
+    function clicker(){
+        document.getElementById('theFileInput').click();
+    }
+</script>
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">
                        <button type="submit" formaction="/addcourse" class="btn btn-transparent text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update"><i class="bi bi-cloud-upload-fill"></i></button>

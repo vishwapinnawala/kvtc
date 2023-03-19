@@ -28,7 +28,17 @@ class coursescontroller extends Controller
         $nextintake = $request->nextintake;
         $duration = $request->duration;
         $level = $request->level;
-        $imageid = $request->imageid;
+
+
+        $imageid = $request->file('imageid');
+        
+        $namegen=hexdec(uniqid());
+        $imgext=strtolower($imageid->getClientOriginalExtension());
+        $imgname=$namegen.'.'.$imgext;
+        $up_location='image/courses/';
+        $lastimg=$up_location.$imgname;
+        $imageid->move($up_location,$imgname);
+
 
         $affected = DB::update(
          'insert into courses (name,description,nextintake,duration,level,imageid) VALUES (?,?,?,?,?,?)', 
