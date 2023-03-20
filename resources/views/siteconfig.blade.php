@@ -201,10 +201,14 @@
 								
 								<div class="mb-3">
 									<label for="formFileMultiple" class="form-label">Add Background Images</label>
-									<input class="form-control" type="file" id="formFileMultiple" multiple>
+                  <form method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+									<input class="form-control" type="file" name="imageid" id="formFileMultiple" multiple>
                   <br>*Select at least 3 images
 <br><br>
- <p><a href="#" class="btn btn-primary" role="button">Save</a></p>
+ <p><input type="submit"  formaction="/addbg" class="btn btn-primary" role="button"></input></p>
+</form>
 								</div>							
 							</div>
 						</div>

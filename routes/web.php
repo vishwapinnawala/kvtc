@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\coursescontroller;
+use App\Http\Controllers\siteconfigcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,10 @@ Route::controller(coursescontroller::class)->group(function () {
     Route::post('/updatecourse', 'update');
     Route::post('/deletecourse', 'destroy');
 })->middleware(['auth', 'verified'])->name('courses');
+
+Route::controller(siteconfigcontroller::class)->group(function () {
+    Route::post('/addbg', 'store');
+})->middleware(['auth', 'verified'])->name('siteconfig');
 
 //Route::get('/courses', [coursescontroller::class, 'index'])->middleware(['auth', 'verified'])->name('siteconfig');
 //Route::post('/updatecourse', [coursescontroller::class, 'store'])->middleware(['auth', 'verified'])->name('siteconfig');

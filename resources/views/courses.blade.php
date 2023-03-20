@@ -264,13 +264,13 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                    <td class="d-none"><input type="text" name="id" class="form-control" value=""></td>
                    <td><input type="text"  name="name" class="form-control" value=""></td>
-                   <td><textarea class="form-control" name="description" id="exampleFormControlTextarea1" cols="100" rows="2"></textarea></td>
+                   <td><textarea class="form-control" name="description" id="exampleFormControlTextarea1" cols="100" rows="1"></textarea></td>
 
                    <td><input type="text"  name="nextintake" class="form-control" value=""></td>
                    <td><input type="text"  name="duration" class="form-control" value=""></td>
                    <td><input type="text"  name="level" class="form-control" value=""></td>
                    <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:;" required/></td> 
-                   
+                  
               
            
                     <td>
