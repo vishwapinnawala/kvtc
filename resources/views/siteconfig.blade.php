@@ -200,72 +200,61 @@
 							<div class="card-body">
 								
 								<div class="mb-3">
-									<label for="formFileMultiple" class="form-label">Add Background Images</label>
-                  <form method="post" enctype="multipart/form-data">
-                    @csrf
+                <form action="/addbg" method="post" enctype="multipart/form-data">
+                @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-									<input class="form-control" type="file" name="imageid" id="formFileMultiple" multiple>
+									<label for="formFileMultiple" class="form-label">Add Background Images</label>
+                                 
+								<input class="form-control" type="file" name="imageid[]" multiple>
                   <br>*Select at least 3 images
 <br><br>
- <p><input type="submit"  formaction="/addbg" class="btn btn-primary" role="button"></input></p>
+ <p><input type="submit" class="btn btn-primary" role="button"></input></p>
 </form>
 								</div>							
 							</div>
 						</div>
-						<h6 class="mb-0 text-uppercase">Featured Courses</h6>
+						<h6 class="mb-0 text-uppercase">Vision And Mission</h6>
 						<hr/>
 						<div class="card">
 							<div class="card-body">
                 <div class="mb-3">
-									<label for="formFile" class="form-label">Course Preview Image 1</label>
-									<input class="form-control" type="file" id="formFile">
+                  <form action="/adddata" method="post" >
+                @csrf
+                
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+									<label for="formFile" class="form-label">Vision</label>
+                  <textarea name="vision"   class="form-control" id="exampleFormControlTextarea1" rows="3">{{$vision[0]->vision}}</textarea>  
+										</div>
+                    <div class="mb-3">
+									<label for="formFile" class="form-label">Mission</label>
+                  <textarea name="mission"  class="form-control" id="exampleFormControlTextarea1" rows="3">{{$vision[0]->mission}}</textarea>
+										</div>
+                    <br>
+    <label class="form-label" >Student Count</label>
+    <input name="sc1" value="{{$vision[0]->sc1}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+    <label  class="form-label" >Student Count</label>
+    <input name="sc2" value="{{$vision[0]->sc2}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+    <label class="form-label" >Student Count</label>
+    <input name="sc3" value="{{$vision[0]->sc3}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+    <label class="form-label" >Student Count</label>
+    <input name="sc4" value="{{$vision[0]->sc4}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+ 
 								</div>
-                <label class="form-label" for="coursetitle">Course Name</label>
-								<input class="form-control form-control-lg mb-3" id="coursetitle" type="text" placeholder="" aria-label=" example">
-								<label class="form-label" for="coursetitle">Course Description</label>
-                <input class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+                <div class="card-body">
+                
+                
+   
+    
 								</div>
+                
 						</div>
-            <div class="card">
-							<div class="card-body">
-                <div class="mb-3">
-									<label for="formFile" class="form-label">Course Preview Image 2</label>
-									<input class="form-control" type="file" id="formFile">
-								</div>
-                <label class="form-label" for="coursetitle">Course Name</label>
-								<input class="form-control form-control-lg mb-3" id="coursetitle" type="text" placeholder="" aria-label=" example">
-								<label class="form-label" for="coursetitle">Course Description</label>
-                <input class="form-control mb-3" type="text" placeholder="" aria-label=" example">
-								</div>
-						</div>
-            <div class="card">
-							<div class="card-body">
-                <div class="mb-3">
-									<label for="formFile" class="form-label">Course Preview Image 3</label>
-									<input class="form-control" type="file" id="formFile">
-								</div>
-                <label class="form-label" for="coursetitle">Course Name</label>
-								<input class="form-control form-control-lg mb-3" id="coursetitle" type="text" placeholder="" aria-label=" example">
-								<label class="form-label" for="coursetitle">Course Description</label>
-                <input class="form-control mb-3" type="text" placeholder="" aria-label=" example">
-								</div>
-						</div>
-            <div class="card">
-							<div class="card-body">
-                <div class="mb-3">
-									<label for="formFile" class="form-label">Course Preview Image 4</label>
-									<input class="form-control" type="file" id="formFile">
-								</div>
-                <label class="form-label" for="coursetitle">Course Name</label>
-								<input class="form-control form-control-lg mb-3" id="coursetitle" type="text" placeholder="" aria-label=" example">
-								<label class="form-label" for="coursetitle">Course Description</label>
-                <input class="form-control mb-3" type="text" placeholder="" aria-label=" example">
-								</div>
-
+            <p><button type="submit" class="me-md-2 btn btn-primary" role="button">Save</button></p>
+</form>  
+           
 						</div>
 						
 				<!--end row-->
- <p><a href="#" class="btn btn-primary" role="button">Save Features Cources</a></p>
+
 			</main>
        <!--end page main-->
 

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\coursescontroller;
 use App\Http\Controllers\siteconfigcontroller;
+use App\Http\Controllers\indexcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +17,23 @@ use App\Http\Controllers\siteconfigcontroller;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('hello');
+});*/
+
+Route::controller(indexcontroller::class)->group(function () {
+    Route::get('/', 'index');
+    //Route::post('/addcourse', 'store');
 });
 Route::get('/welcome', function () {
     return view('welcome');
+});
+
+
+Route::get('/gallery', function () {
+    $pics = \File::files('image/gallery/');
+    return view('gallery',['pics' => $pics]);
 });
 
 /*
@@ -35,11 +47,7 @@ Route::get('/dashboard', function () {
     return view('dashboard',compact('username','uemail'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/siteconfig', function () {
-    $username=Auth::user()->name;
-    $uemail=Auth::user()->email;
-    return view('siteconfig',compact('username','uemail'));
-})->middleware(['auth', 'verified'])->name('siteconfig');
+
 /*
 Route::get('/courses', function () {
     $username=Auth::user()->name;
@@ -60,9 +68,16 @@ Route::controller(coursescontroller::class)->group(function () {
     Route::post('/deletecourse', 'destroy');
 })->middleware(['auth', 'verified'])->name('courses');
 
+
+
 Route::controller(siteconfigcontroller::class)->group(function () {
+    Route::get('/siteconfig', 'index');
     Route::post('/addbg', 'store');
+    Route::post('/adddata', 'content');
 })->middleware(['auth', 'verified'])->name('siteconfig');
+
+
+
 
 //Route::get('/courses', [coursescontroller::class, 'index'])->middleware(['auth', 'verified'])->name('siteconfig');
 //Route::post('/updatecourse', [coursescontroller::class, 'store'])->middleware(['auth', 'verified'])->name('siteconfig');

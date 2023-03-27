@@ -1,13 +1,18 @@
 <!DOCTYPE HTML>
 <html>
+
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>KVTC</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="description" content="KVTC Sri Lanka" />
+	<meta name="keywords" content="KVTC Sri Lanka Kawanthissa Vocational Training Center" />
 	<meta name="author" content="vishwapinnawala" />
+
+
+	
+ 
 
 	
 
@@ -50,11 +55,12 @@
 
 	<!-- Modernizr JS -->
 	<script src="{{asset('import/assets/js/modernizr-2.6.2.min.js')}}"></script>
+	
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="{{asset('import/assets/js/respond.min.js')}}"></script>
 	<![endif]-->
-
+	<link rel="stylesheet" href="{{asset('import/assets/css/finalstyle.css')}}">
 	</head>
 	<body>
 
@@ -84,7 +90,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>KVTC</a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -92,15 +98,9 @@
 							<li><a href="courses.html">Courses</a></li>
 							<li><a href="teacher.html">Teacher</a></li>
 							<li><a href="about.html">About</a></li>
-							<li><a href="pricing.html">Pricing</a></li>
-							<li class="has-dropdown">
+							<li class="">
 								<a href="blog.html">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
+								
 							</li>
 							<li><a href="contact.html">Contact</a></li>
 							
@@ -138,12 +138,13 @@
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url({{asset('import/assets/images/img_bg_1.jpg')}});">
+		   	<li style="background-image:url({{$files[0]}})">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
+								
 			   					<h1>The Roots of Education are Bitter, But the Fruit is Sweet</h1>
 									<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
 									<p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
@@ -152,7 +153,7 @@
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url({{asset('import/assets/images/img_bg_2.jpg')}});">
+		   	<li style="background-image: url({{$files[1]}});">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -166,7 +167,7 @@
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url({{asset('import/assets/images/img_bg_3.jpg')}});">
+		   	<li style="background-image: url({{$files[2]}});">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -187,101 +188,22 @@
 	<div id="fh5co-course-categories">
 		<div class="container">
 			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Course categories</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<div class="services">
+				<span class="icon">
+							<i class="icon-eye"></i>
+						</span></div>
+					<h2 class="text-secondary" >Our Vision</h2>
+					<h4 class="text-muted">{{$vision[0]->vision}}</h4>
+					<div class="services">
+				<span class="icon">
+							<i class="icon-flag"></i>
+						</span></div>
+					<h2 class="text-secondary">Our Mission</h2>
+					<h4 class="text-muted">{{$vision[0]->mission}}</h4>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-shop"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Business</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-heart4"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-banknote"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-lab2"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-photo"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Art &amp; Media</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-home-outline"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Real Estate</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-bubble3"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Language</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-world"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Web &amp; Programming</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 
@@ -293,22 +215,22 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-world"></i></span>
-							<span class="fh5co-counter js-counter" data-from="0" data-to="3297" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc1}}" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Foreign Followers</span>
 						</div>
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-study"></i></span>
-							<span class="fh5co-counter js-counter" data-from="0" data-to="3700" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc2}}" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Students Enrolled</span>
 						</div>
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-bulb"></i></span>
-							<span class="fh5co-counter js-counter" data-from="0" data-to="5034" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc3}}" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Classes Complete</span>
 						</div>
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-head"></i></span>
-							<span class="fh5co-counter js-counter" data-from="0" data-to="1080" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc4}}" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Certified Teachers</span>
 						</div>
 					</div>
@@ -328,45 +250,45 @@
 			<div class="row">
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-1.jpg')}});">
+						<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[0]->imageid}});">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Web Master</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="#">{{$courses[0]->name}}</a></h3>
+							<p>{{$courses[0]->description}}</p>
 							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-2.jpg')}});">
+					<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[1]->imageid}});">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Business &amp; Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="#">{{$courses[1]->name}}</a></h3>
+							<p>{{$courses[1]->description}}</p>
 							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-3.jpg')}});">
+					<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[0]->imageid}});">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						<h3><a href="#">{{$courses[0]->name}}</a></h3>
+							<p>{{$courses[0]->description}}</p>	
+						<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url({{asset('import/assets/images/project-4.jpg')}});">
+					<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[0]->imageid}});">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						<h3><a href="#">{{$courses[0]->name}}</a></h3>
+							<p>{{$courses[0]->description}}</p>	
+						<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>
 				</div>
@@ -374,57 +296,13 @@
 		</div>
 	</div>
 
-	<div id="fh5co-testimonial" style="background-image: url({{asset('import/assets/images/school.jpg')}});">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2><span>Testimonials</span></h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="row animate-box">
-						<div class="owl-carousel owl-carousel-fullwidth">
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<div class="user" style="background-image: url({{asset('import/assets/images/person1.jpg')}});"></div>
-									<span>Mary Walker<br><small>Students</small></span>
-									<blockquote>
-										<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-									</blockquote>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<div class="user" style="background-image: url({{asset('import/assets/images/person2.jpg')}});"></div>
-									<span>Mike Smith<br><small>Students</small></span>
-									<blockquote>
-										<p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-									</blockquote>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<div class="user" style="background-image: url({{asset('import/assets/images/person3.jpg')}});"></div>
-									<span>Rita Jones<br><small>Teacher</small></span>
-									<blockquote>
-										<p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-									</blockquote>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 	<div id="fh5co-blog">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Blog &amp; Events</h2>
+					<h2>News &amp; Events</h2>
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
@@ -492,122 +370,9 @@
 		</div>
 	</div>
 
-	<div id="fh5co-pricing" class="fh5co-bg-section">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Plan &amp; Pricing</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="pricing pricing--rabten">
-					<div class="col-md-4 animate-box">
-						<div class="pricing__item">
-							<div class="wrap-price">
-								 <!-- <div class="icon icon-user2"></div> -->
-	                     <h3 class="pricing__title">Trial</h3>
-	                     <!-- <p class="pricing__sentence">Single user license</p> -->
-							</div>
-                     <div class="pricing__price">
-                        <span class="pricing__anim pricing__anim--1">
-								<span class="pricing__currency">$</span>0
-                        </span>
-                        <span class="pricing__anim pricing__anim--2">
-								<span class="pricing__period">per year</span>
-                        </span>
-                     </div>
-                     <div class="wrap-price">
-                     	<ul class="pricing__feature-list">
-	                        <li class="pricing__feature">One Day Trial</li>
-	                        <li class="pricing__feature">Limited Courses</li>
-	                        <li class="pricing__feature">Free 3 Lessons</li>
-	                        <li class="pricing__feature">No Supporter</li>
-	                        <li class="pricing__feature">No Tutorial</li>
-	                        <li class="pricing__feature">No Ebook</li>
-	                         <li class="pricing__feature">Limited Registered User</li>
-	                     </ul>
-	                     <button class="pricing__action">Choose plan</button>
-                     </div>
-                  </div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="pricing__item">
-							<div class="wrap-price">
-								<!-- <div class="icon icon-store"></div> -->
-	                     <h3 class="pricing__title">Silver</h3>
-	                     <!-- <p class="pricing__sentence">Up to 5 users</p> -->
-							</div>
-                     <div class="pricing__price">
-                        <span class="pricing__anim pricing__anim--1">
-								<span class="pricing__currency">$</span>79
-                        </span>
-                        <span class="pricing__anim pricing__anim--2">
-								<span class="pricing__period">per year</span>
-                        </span>
-                     </div>
-                     <div class="wrap-price">
-                     	<ul class="pricing__feature-list">
-	                        <li class="pricing__feature">One Year Standard Access</li>
-	                        <li class="pricing__feature">Limited Courses</li>
-	                        <li class="pricing__feature">300+ Lessons</li>
-	                        <li class="pricing__feature">Random Supporter</li>
-	                        <li class="pricing__feature">View Only Ebook</li>
-	                        <li class="pricing__feature">Standard Tutorials</li>
-	                         <li class="pricing__feature">Unlimited Registered User</li>
-	                     </ul>
-	                     <button class="pricing__action">Choose plan</button>
-                     </div>
-                 </div>
-					</div>
-					<div class="col-md-4 animate-box">
-                  <div class="pricing__item">
-                  	<div class="wrap-price">
-                  		<!-- <div class="icon icon-home2"></div> -->
-	                     <h3 class="pricing__title">Gold</h3>
-	                     <!-- <p class="pricing__sentence">Unlimited users</p> -->
-							</div>
-                     <div class="pricing__price">
-                        <span class="pricing__anim pricing__anim--1">
-								<span class="pricing__currency">$</span>499
-                        </span>
-                        <span class="pricing__anim pricing__anim--2">
-								<span class="pricing__period">per year</span>
-                        </span>
-                     </div>
-                     <div class="wrap-price">
-                     	<ul class="pricing__feature-list">
-	                        <li class="pricing__feature">Life Time Access</li>
-	                        <li class="pricing__feature">Unlimited All Courses</li>
-	                        <li class="pricing__feature">7000+ Lessons &amp; Growing</li>
-	                        <li class="pricing__feature">Free Supporter</li>
-	                        <li class="pricing__feature">Free Ebook Downloads</li>
-	                        <li class="pricing__feature">Premium Tutorials</li>
-	                         <li class="pricing__feature">Unlimited Registered User</li>
-	                     </ul>
-	                     <button class="pricing__action">Choose plan</button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-			</div>
-		</div>
-	</div>
+	
 
-	<div id="fh5co-register" style="background-image: url({{asset('import/assets/images/img_bg_2.jpg')}});">
-		<div class="overlay"></div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 animate-box">
-				<div class="date-counter text-center">
-					<h2>Get 400 of Online Courses for Free</h2>
-					<h3>By Mike Smith</h3>
-					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
-					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 	<div id="fh5co-gallery" class="fh5co-bg-section">
 		<div class="row text-center">
@@ -615,16 +380,16 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-5.jpg')}});"></a>
+				<a href="gallery" class="gallery" style="background-image: url({{$pic[0]}});"></a>
 			</div>
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-2.jpg')}});"></a>
+				<a href="gallery" class="gallery" style="background-image: url({{$pic[1]}});"></a>
 			</div>
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-3.jpg')}});"></a>
+				<a href="gallery" class="gallery" style="background-image: url({{$pic[2]}});"></a>
 			</div>
 			<div class="col-md-3 col-padded">
-				<a href="#" class="gallery" style="background-image: url({{asset('import/assets/images/project-4.jpg')}});"></a>
+				<a href="gallery" class="gallery" style="background-image: url({{$pic[3]}});"></a>
 			</div>
 		</div>
 	</div>
