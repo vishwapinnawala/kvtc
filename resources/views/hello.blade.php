@@ -22,6 +22,7 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:site_name" content=""/>
 	<meta property="og:description" content=""/>
+	
 	<meta name="twitter:title" content="" />
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
@@ -77,7 +78,7 @@
 						<p class="site">www.kvtc.lk</p>
 						<p class="num">Call: +01 123 456 7890</p>
 						<ul class="fh5co-social">
-							<li><a href="#"><i class="icon-facebook2"></i></a></li>
+							<li><a href="https://web.facebook.com/profile.php?id=100063919955915"><i class="icon-facebook2"></i></a></li>
 							<li><a href="#"><i class="icon-twitter2"></i></a></li>
 							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
 							<li><a href="#"><i class="icon-github"></i></a></li>
@@ -90,20 +91,20 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>KVTC</a></div>
+						<div id="fh5co-logo"><a href="/"><i class="icon-study"></i>KVTC</a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="courses.html">Courses</a></li>
-							<li><a href="teacher.html">Teacher</a></li>
+							<li class="active"><a href="/">Home</a></li>
+							<li><a href="courselist">Courses</a></li>
+							<li><a href="teacher">Teacher</a></li>
 							<li><a href="gallery">Gallery</a></li>
-							<li><a href="about.html">About</a></li>
+							<li><a href="about">About</a></li>
 							<li class="">
-								<a href="blog.html">Blog</a>
+								<a href="blog">Blog</a>
 								
 							</li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="contact">Contact</a></li>
 							
 
 
@@ -203,7 +204,7 @@
 					<h2 class="text-secondary">Our Mission</h2>
 					<h4 class="text-muted">{{$vision[0]->mission}}</h4>
 				</div>
-			</div>
+			</div> 
 			
 		</div>
 	</div>
@@ -249,50 +250,20 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[0]->imageid}});">
-						</a>
-						<div class="desc">
-							<h3><a href="#">{{$courses[0]->name}}</a></h3>
-							<p>{{$courses[0]->description}}</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-					<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[1]->imageid}});">
-						</a>
-						<div class="desc">
-							<h3><a href="#">{{$courses[1]->name}}</a></h3>
-							<p>{{$courses[1]->description}}</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
+				
+				@foreach($courses as $course)
 				<div class="col-md-6 animate-box">
 					<div class="course">
 					<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[0]->imageid}});">
 						</a>
 						<div class="desc">
-						<h3><a href="#">{{$courses[0]->name}}</a></h3>
-							<p>{{$courses[0]->description}}</p>	
+						<h3><a href="#">{{$course->name}}</a></h3>
+							<p>{{$course->description}}</p>	
 						<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-					<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[0]->imageid}});">
-						</a>
-						<div class="desc">
-						<h3><a href="#">{{$courses[0]->name}}</a></h3>
-							<p>{{$courses[0]->description}}</p>	
-						<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
