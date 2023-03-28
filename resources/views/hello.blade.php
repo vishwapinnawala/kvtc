@@ -97,6 +97,7 @@
 							<li class="active"><a href="index.html">Home</a></li>
 							<li><a href="courses.html">Courses</a></li>
 							<li><a href="teacher.html">Teacher</a></li>
+							<li><a href="gallery">Gallery</a></li>
 							<li><a href="about.html">About</a></li>
 							<li class="">
 								<a href="blog.html">Blog</a>

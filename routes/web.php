@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\coursescontroller;
 use App\Http\Controllers\siteconfigcontroller;
 use App\Http\Controllers\indexcontroller;
+use App\Http\Controllers\gallerydashboardcontroller;
+use App\Http\Controllers\courselistcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,17 @@ Route::controller(indexcontroller::class)->group(function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/teacher', function () {
+    return view('teacher');
+});
+
+
+Route::controller(courselistcontroller::class)->group(function () {
+    Route::get('/courseslist', 'index');
+});
+
+
 
 
 Route::get('/gallery', function () {
@@ -67,6 +80,16 @@ Route::controller(coursescontroller::class)->group(function () {
     Route::post('/updatecourse', 'update');
     Route::post('/deletecourse', 'destroy');
 })->middleware(['auth', 'verified'])->name('courses');
+
+
+
+Route::controller(gallerydashboardcontroller::class)->group(function () {
+    Route::get('/gallerydashboard', 'index');
+    Route::post('/imgdelete', 'delete');
+    Route::post('/imgadd', 'add');
+    //Route::post('/updatecourse', 'update');
+    //Route::post('/deletecourse', 'destroy');
+})->middleware(['auth', 'verified'])->name('gallerydashboard');
 
 
 

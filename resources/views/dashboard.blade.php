@@ -147,7 +147,7 @@
               <a href="siteconfig" class="" aria-expanded="false">
                 <div class="parent-icon"><i class="bi bi-grid"></i>
                 </div>
-                <div class="menu-title">Application</div>
+                <div class="menu-title">Site Configurations</div>
               </a>
               
             </li>
@@ -166,7 +166,14 @@
               </a>
              
             </li>
-                   
+            <li>
+              <a class="" href="gallerydashboard" aria-expanded="false">
+                <div class="parent-icon"><i class="bi bi-file-earmark-spreadsheet"></i>
+                </div>
+                <div class="menu-title">Gallery</div>
+              </a>
+             
+            </li>                   
             
             
             

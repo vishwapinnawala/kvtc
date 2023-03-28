@@ -218,131 +218,96 @@
 
 
 
-	<div class="card">
-          <div class="card-body">
-            <div class="d-flex align-items-center">
-               <h5 class="mb-0">Course Details</h5>
-                <form class="ms-auto position-relative">
-                  <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
-                  <input class="form-control ps-5" type="text" placeholder="search">
-                </form>
-            </div>
-            <div class="table-responsive mt-3">
-              <table class="table align-middle">
-                <thead class="table-secondary">
-
-
-                  <tr>
-                   <th class="d-none">#</th>
-                   <th>Course Name</th>
-                   <th>Description</th>
-                   <th>Next Intake</th>
-		   <th>NVQ Level</th>
-       <th>Duration</th>
-                   <th>Add Photo</th>
-                   <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                @foreach($courses as $key => $data)
-                  <tr>
-                    <form method="post" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text" name="id" class="form-control" value="{{$data->id}}"></td>
-                   <td><input type="text"  name="name" class="form-control" value="{{$data->name}}"></td>
-                   <td><input type="text"  name="description" class="form-control" value="{{$data->description}}"></td>
-                   <td><input type="text"  name="nextintake" class="form-control" value="{{$data->nextintake}}"></td>
-                   <td><input type="text"  name="duration" class="form-control" value="{{$data->duration}}"></td>
-                   <td><input type="text"  name="level" class="form-control" value="{{$data->level}}"></td>
-                  <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:" /></td> 
-                   
-                    <td>
-                      <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                       <button type="submit" formaction="/updatecourse" class="btn btn-transparent text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update"><i class="bi bi-cloud-upload-fill"></i></button>
-                       <button type="submit" formaction="/deletecourse" class="btn btn-transparent text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"><i class="bi bi-trash-fill"></i></button>
+        <div class="card">
+                 <div class="card-header py-3"> 
+                  <div class="row g-3 align-items-center">
+                    <div class="col-lg-3 col-md-6 me-auto">
+                      <div class="ms-auto position-relative">
+                        <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
+                        <input class="form-control ps-5" type="text" placeholder="search produts">
                       </div>
-                    </td>   
-                    </form>                 
-                  </tr>
-                @endforeach
-                <tr>
-                    <form method="post" enctype="multipart/form-data">
-                    @csrf
+                    </div>
+                    <div class="col-lg-2 col-6 col-md-3">
+                      <select class="form-select">
+                        <option>All category</option>
+                        <option>Fashion</option>
+                        <option>Electronics</option>
+                        <option>Furniture</option>
+                        <option>Sports</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-2 col-6 col-md-3">
+                      <select class="form-select">
+                        <option>Latest added</option>
+                        <option>Cheap first</option>
+                        <option>Most viewed</option>
+                      </select>
+                    </div>
+                  </div>
+                 </div>
+                 <div class="card-body">
+                   <div class="product-grid">
+                     <div class="row row-cols-1 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-5 g-3">
+                     <div class="col">
+                          <div class="card border shadow-none mb-0">
+                            <div class="card-body text-center">
+                            
+                              <img src="import/assets2/images/plus.png" class="img-fluid mb-3" alt=""/>
+                              <form action="/imgadd" method="post"  enctype='multipart/form-data' >
+                @csrf
+                
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text" name="id" class="form-control" value=""></td>
-                   <td><input type="text"  name="name" class="form-control" value=""></td>
-                   <td><textarea class="form-control" name="description" id="exampleFormControlTextarea1" cols="100" rows="1"></textarea></td>
-
-                   <td><input type="text"  name="nextintake" class="form-control" value=""></td>
-                   <td><input type="text"  name="duration" class="form-control" value=""></td>
-                   <td><input type="text"  name="level" class="form-control" value=""></td>
-                   <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:;" required/></td> 
-                  
-              
-           
-                    <td>
-                      <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                       <button type="submit" formaction="/addcourse" class="btn btn-transparent text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update"><i class="bi bi-cloud-upload-fill"></i></button>
-                      </div>
-                    </td>   
-                    </form>                 
-                  </tr>
-                  
-                  
+                              <small>Add New Images</small>
+                              <div class="actions d-flex align-items-center justify-content-center gap-2 mt-3">
+                              <input class="btn btn-sm btn-outline-primary form-control" type="file" name="imageid[]" multiple>
+                                <button type="submit" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-fill"></i> Add</button>
+                            </form>
+                              </div>
+                            </div>
+                          </div>
+                       </div>
+                     @foreach ($images as $images)
+                     <form action="/imgdelete" method="post" >
+                @csrf
+                
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                       <div class="col">
+                          <div class="card border shadow-none mb-0">
+                            <div class="card-body text-center">
+                              <img src="{{$images}}" class="img-fluid mb-3" alt=""/>
+                             
+                              
+                              <div class="actions d-flex align-items-center justify-content-center gap-2 mt-3">
+                               <input type="text" name="imgname" hidden value="{{$images}}">
+                                <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i> Delete</button>
+</form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    @endforeach
                  
-                  
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-						
-				<!--end row-->
- <p><a href="#" class="btn btn-primary" role="button">Save Features Cources</a></p>
-			</main>
-       <!--end page main-->
-
-
-       <!--start overlay-->
-        <div class="overlay nav-toggle-icon"></div>
-       <!--end overlay-->
-
-        <!--Start Back To Top Button-->
-        <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
-        <!--End Back To Top Button-->
-        
-        <!--start switcher-->
-       <div class="switcher-body">
-        <button class="btn btn-primary btn-switcher shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-paint-bucket me-0"></i></button>
-        <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
-          <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-          </div>
-          <div class="offcanvas-body">
-            <h6 class="mb-0">Theme Variation</h6>
-            <hr>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1" checked>
-              <label class="form-check-label" for="LightTheme">Light</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme" value="option2">
-              <label class="form-check-label" for="DarkTheme">Dark</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDarkTheme" value="option3">
-              <label class="form-check-label" for="SemiDarkTheme">Semi Dark</label>
-            </div>
-     
-            </div>
-          </div>
-        </div>
-       </div>
-       <!--end switcher-->
+                
+                 
+              
+            
+          
+       
+       <!--end row-->
+      
+    </div>
+    <nav class="float-end mt-4" aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
 
   </div>
+</div>
   <!--end wrapper-->
 
 

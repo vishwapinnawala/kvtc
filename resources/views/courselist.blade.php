@@ -11,10 +11,7 @@
 	<meta name="author" content="vishwapinnawala" />
 
 
-	<link rel="stylesheet" href="{{asset('import/assets/css/bootstrap.css')}}">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link rel="stylesheet" href="{{asset('import/assets/css/gallery-grid.css')}}">
+	
  
 
 	
@@ -65,131 +62,140 @@
 	<![endif]-->
 	<link rel="stylesheet" href="{{asset('import/assets/css/finalstyle.css')}}">
 	</head>
-
-
-
-
-    <body>
-
-
+	<body>
 		
-<div class="fh5co-loader"></div>
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-right">
+						<p class="site">www.yourdomainname.com</p>
+						<p class="num">Call: +01 123 456 7890</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-facebook2"></i></a></li>
+							<li><a href="#"><i class="icon-twitter2"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
+							<li><a href="#"><i class="icon-github"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="courses.html">Courses</a></li>
+							<li><a href="teacher.html">Teacher</a></li>
+							<li><a href="about.html">About</a></li>
+							
+							<li class="has-dropdown">
+								<a href="blog.html">Blog</a>
+								
+							</li>
+							<li><a href="contact.html">Contact</a></li>
+							@if (Route::has('login'))
+                
+				@auth
+				<li class=""> <a href="{{ url('/dashboard') }}" class="">Dashboard</a></li>
+				@else
+				<li class=""> <a href="{{ route('login') }}" class="">Log in</a></li>
 
-<div id="page">
-<nav class="fh5co-nav" role="navigation">
-    <div class="top">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-right">
-                    <p class="site">www.kvtc.lk</p>
-                    <p class="num">Call: +01 123 456 7890</p>
-                    <ul class="fh5co-social">
-                        <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                        <li><a href="#"><i class="icon-github"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="top-menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-2">
-                    <div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>KVTC</a></div>
-                </div>
-                <div class="col-xs-10 text-right menu-1">
-                    <ul>
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="teacher.html">Teacher</a></li>
-						<li><a href="gallery">Gallery</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li class="">
-                            <a href="blog.html">Blog</a>
-                            
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                        
-
-
-
-                        @if (Route::has('login'))
-            
-                @auth
-                <li class=""> <a href="{{ url('/dashboard') }}" class="">Dashboard</a></li>
-                @else
-                <li class=""> <a href="{{ route('login') }}" class="">Log in</a></li>
-
-                    @if (Route::has('register'))
-                    <li class=""> <a href="{{ route('register') }}" class="">Register</a></li>
-                    @endif
-                @endauth                
-        @endif
+					@if (Route::has('register'))
+					<li class=""> <a href="{{ route('register') }}" class="">Register</a></li>
+					@endif
+				@endauth                
+		@endif
 
 
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	
+	<aside id="fh5co-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			@foreach ($files as $images)
+		   	<li style="background-image:url({{$images}});">
+			   
+			   
+			   @endforeach
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1 class="heading-section">Our Course</h1>
+									<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
 
+	<div id="fh5co-course">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2>Our Course</h2>
+					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+				</div>
+			</div>
+			<div class="row">
+			@foreach ($courses as $courses)
+				<div class="col-md-12 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses->imageid}});">
+						</a>
+						<div class="desc">
+							<h3><a href="#">{{$courses->name}}</a></h3>
+							<p>Next Intake - {{$courses->nextintake}}</p>
+							<p>Duration - {{$courses->duration}} Months</p>
+							<p>NVQ Level - {{$courses->level}} </p>
+							<p>{{$courses->description}}</p>
+							
 
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
+					</div>
+				</div>
+			@endforeach	
+				
+			</div>
+		</div>
+	</div>
 
-                    </ul>
-                    
-                    
+	<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
+		<div class="overlay"></div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 animate-box">
+				<div class="date-counter text-center">
+					<h2>Get 400 of Online Courses for Free</h2>
+					<h3>By Mike Smith</h3>
+					<div class="simply-countdown simply-countdown-one"></div>
+					<p><strong>Limited Offer, Hurry Up!</strong></p>
+					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</nav>
-
-
-
-
-
-
-
-
-<div class="container ">
-
-    <h1 class="text-center">Gallery</h1>
-
-    
-    
-    <div class="tz-gallery">
-
-        <div class="row">
-        @foreach ($pics as $pic)
-        <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="{{$pic}}">
-                    <img src="{{$pic}}" alt="Park">
-                </a>
-            </div>
-        @endforeach
-            
-            
-            
-        
-         
-        </div>
-
-    </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer id="fh5co-footer" role="contentinfo" style="background-image: url({{asset('import/assets/images/img_bg_4.jpg')}});">
+	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
@@ -258,6 +264,7 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
+	
 	<!-- jQuery -->
 	<script src="{{asset('import/assets/js/jquery.min.js')}}"></script>
 	<!-- jQuery Easing -->
@@ -299,9 +306,6 @@
         enableUtc: false
     });
 	</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-<script>
-    baguetteBox.run('.tz-gallery');
-</script>
 	</body>
 </html>
+
