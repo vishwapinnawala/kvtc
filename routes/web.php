@@ -8,6 +8,11 @@ use App\Http\Controllers\siteconfigcontroller;
 use App\Http\Controllers\indexcontroller;
 use App\Http\Controllers\gallerydashboardcontroller;
 use App\Http\Controllers\courselistcontroller;
+use App\Http\Controllers\teachercontroller;
+use App\Http\Controllers\teacherdashcontroller;
+use App\Http\Controllers\blogdashcontroller;
+use App\Http\Controllers\blogscontroller;
+use App\Http\Controllers\blogpostscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +37,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/teacher', function () {
-    return view('teacher');
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 
@@ -42,11 +51,21 @@ Route::controller(courselistcontroller::class)->group(function () {
 });
 
 
-
+Route::controller(teachercontroller::class)->group(function () {
+    Route::get('/teacher', 'index');
+});
 
 Route::get('/gallery', function () {
     $pics = \File::files('image/gallery/');
     return view('gallery',['pics' => $pics]);
+});
+
+Route::controller(blogscontroller::class)->group(function () {
+    Route::post('/blogpost', 'index');
+});
+
+Route::controller(blogpostscontroller::class)->group(function () {
+    Route::get('/blog', 'index');
 });
 
 /*
@@ -80,6 +99,20 @@ Route::controller(coursescontroller::class)->group(function () {
     Route::post('/updatecourse', 'update');
     Route::post('/deletecourse', 'destroy');
 })->middleware(['auth', 'verified'])->name('courses');
+
+Route::controller(blogdashcontroller::class)->group(function () {
+    Route::get('/blogdash', 'index');
+    Route::post('/addpost', 'store');
+    Route::post('/updatepost', 'update');
+    Route::post('/deletepost', 'destroy');
+})->middleware(['auth', 'verified'])->name('blogdash');
+
+Route::controller(teacherdashcontroller::class)->group(function () {
+    Route::get('/teacherdash', 'index');
+    Route::post('/addteacher', 'store');
+    Route::post('/updateteacher', 'update');
+    Route::post('/deleteteacher', 'destroy');
+})->middleware(['auth', 'verified'])->name('teacherdash');
 
 
 

@@ -155,7 +155,7 @@
             </li>
             <li>
               <a href="siteconfig" class="" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-grid"></i>
+                <div class="parent-icon"><i class="bi bi-gear"></i>
                 </div>
                 <div class="menu-title">Site Configurations</div>
               </a>
@@ -164,7 +164,7 @@
             
             <li>
               <a class="" href="courses" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-file-earmark-spreadsheet"></i>
+                <div class="parent-icon"><i class="bi bi-file-earmark-plus"></i>
                 </div>
                 <div class="menu-title">Courses</div>
               </a>
@@ -172,12 +172,28 @@
             </li>
             <li>
               <a class="" href="gallerydashboard" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-file-earmark-spreadsheet"></i>
+                <div class="parent-icon"><i class="bi bi-image"></i>
                 </div>
                 <div class="menu-title">Gallery</div>
               </a>
              
             </li>  
+            <li>
+              <a class="" href="teacherdash" aria-expanded="false">
+                <div class="parent-icon"><i class="bi bi-people"></i>
+                </div>
+                <div class="menu-title">Teachers</div>
+              </a>
+             
+            </li> 
+            <li>
+              <a class="" href="blogdash" aria-expanded="false">
+                <div class="parent-icon"><i class="bi bi-file-earmark-post"></i>
+                </div>
+                <div class="menu-title">Blog</div>
+              </a>
+             
+            </li> 
           
           </ul>
 
@@ -188,13 +204,13 @@
        <main class="page-content">
 				<!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Forms</div>
+					<div class="breadcrumb-title pe-3">Dashboard</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								<li class="breadcrumb-item"><a href="dashboard"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Form Elements</li>
+								<li class="breadcrumb-item active" aria-current="page">Gallery</li>
 							</ol>
 						</nav>
 					</div>
@@ -251,15 +267,17 @@
                      <div class="col">
                           <div class="card border shadow-none mb-0">
                             <div class="card-body text-center">
-                            
-                              <img src="import/assets2/images/plus.png" class="img-fluid mb-3" alt=""/>
-                              <form action="/imgadd" method="post"  enctype='multipart/form-data' >
-                @csrf
+                            <form action="/imgadd" method="post"  enctype='multipart/form-data' >
+                            @csrf
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                              <br>
+                              <br><input class="btn btn-sm btn-outline-primary form-control" type="file" name="imageid[]" multiple><br><br>                      
                 
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                
+                
                               <small>Add New Images</small>
                               <div class="actions d-flex align-items-center justify-content-center gap-2 mt-3">
-                              <input class="btn btn-sm btn-outline-primary form-control" type="file" name="imageid[]" multiple>
+                              
                                 <button type="submit" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-fill"></i> Add</button>
                             </form>
                               </div>
@@ -296,16 +314,7 @@
        <!--end row-->
       
     </div>
-    <nav class="float-end mt-4" aria-label="Page navigation">
-      <ul class="pagination">
-        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
-
+    
   </div>
 </div>
   <!--end wrapper-->

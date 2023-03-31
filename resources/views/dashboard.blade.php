@@ -28,6 +28,7 @@
   <link href="{{asset('import/assets2/css/light-theme.css')}}" rel="stylesheet" />
   <link href="{{asset('import/assets2/css/semi-dark.css')}}" rel="stylesheet" />
   <link href="{{asset('import/assets2/css/header-colors.css')}}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
   <title>KVTC</title>
 </head>
@@ -51,7 +52,7 @@
               <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="app-emailbox.html">Email</a>
+              <a class="nav-link" href="https://mail.yahoo.com/">Email</a>
               </li>
              
             </ul>
@@ -145,39 +146,46 @@
             </li>
             <li>
               <a href="siteconfig" class="" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-grid"></i>
+                <div class="parent-icon"><i class="bi bi-gear"></i>
                 </div>
                 <div class="menu-title">Site Configurations</div>
               </a>
               
             </li>
             
-            
-            
-            
-            
-            
-            
             <li>
               <a class="" href="courses" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-file-earmark-spreadsheet"></i>
+                <div class="parent-icon"><i class="bi bi-file-earmark-plus"></i>
                 </div>
                 <div class="menu-title">Courses</div>
               </a>
-             
+              
             </li>
             <li>
               <a class="" href="gallerydashboard" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-file-earmark-spreadsheet"></i>
+                <div class="parent-icon"><i class="bi bi-image"></i>
                 </div>
                 <div class="menu-title">Gallery</div>
               </a>
              
-            </li>                   
-            
-            
-            
-            
+            </li>  
+            <li>
+              <a class="" href="teacherdash" aria-expanded="false">
+                <div class="parent-icon"><i class="bi bi-people"></i>
+                </div>
+                <div class="menu-title">Teachers</div>
+              </a>
+             
+            </li> 
+            <li>
+              <a class="" href="blogdash" aria-expanded="false">
+                <div class="parent-icon"><i class="bi bi-file-earmark-post"></i>
+                </div>
+                <div class="menu-title">Blog</div>
+              </a>
+             
+            </li> 
+          
           </ul>
           <!--end navigation-->
        </aside>

@@ -76,7 +76,7 @@
 				<div class="row">
 					<div class="col-xs-12 text-right">
 						<p class="site">www.kvtc.lk</p>
-						<p class="num">Call: +01 123 456 7890</p>
+						<p class="num">Call: 0472239039</p>
 						<ul class="fh5co-social">
 							<li><a href="https://web.facebook.com/profile.php?id=100063919955915"><i class="icon-facebook2"></i></a></li>
 							<li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -96,7 +96,7 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li class="active"><a href="/">Home</a></li>
-							<li><a href="courselist">Courses</a></li>
+							<li><a href="courseslist">Courses</a></li>
 							<li><a href="teacher">Teacher</a></li>
 							<li><a href="gallery">Gallery</a></li>
 							<li><a href="about">About</a></li>
@@ -148,7 +148,7 @@
 			   				<div class="slider-text-inner">
 								
 			   					<h1>The Roots of Education are Bitter, But the Fruit is Sweet</h1>
-									<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
+									
 									<p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
 			   				</div>
 			   			</div>
@@ -162,7 +162,7 @@
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>The Great Aim of Education is not Knowledge, But Action</h1>
-									<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
+									
 									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
 			   				</div>
 			   			</div>
@@ -176,7 +176,7 @@
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>We Help You to Learn New Things</h1>
-									<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
+									
 									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
 			   				</div>
 			   			</div>
@@ -245,8 +245,8 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Our Course</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2>Our Courses</h2>
+					<p>Our carefully selected courses are tailored to meet your needs, ensuring that you receive the best possible education and training for your career success.</p>
 				</div>
 			</div>
 			<div class="row">
@@ -254,12 +254,12 @@
 				@foreach($courses as $course)
 				<div class="col-md-6 animate-box">
 					<div class="course">
-					<a href="#" class="course-img" style="background-image: url(image/courses/{{$courses[0]->imageid}});">
+					<a href="#" class="course-img" style="background-image: url(image/courses/{{$course->imageid}});">
 						</a>
 						<div class="desc">
 						<h3><a href="#">{{$course->name}}</a></h3>
-							<p>{{$course->description}}</p>	
-						<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<p style="color:#E83845;">Next Intake - {{$course->nextintake}}</p>	
+						<span><a href="courseslist" class="btn btn-primary btn-sm ">Read More</a></span>
 						</div>
 					</div>
 				</div>
@@ -275,69 +275,32 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>News &amp; Events</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<p>KVTC is committed to empowering its students with the knowledge and skills necessary to succeed in their chosen fields.</p>
 				</div>
 			</div>
-			<div class="row row-padded-mb">
-				<div class="col-md-4 animate-box">
-					<div class="fh5co-event">
-						<div class="date text-center"><span>15<br>Mar.</span></div>
-						<h3><a href="#">USA, International Triathlon Event</a></h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Read More</a></p>
-					</div>
-				</div>
-				<div class="col-md-4 animate-box">
-					<div class="fh5co-event">
-						<div class="date text-center"><span>15<br>Mar.</span></div>
-						<h3><a href="#">USA, International Triathlon Event</a></h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Read More</a></p>
-					</div>
-				</div>
-				<div class="col-md-4 animate-box">
-					<div class="fh5co-event">
-						<div class="date text-center"><span>15<br>Mar.</span></div>
-						<h3><a href="#">New Device Develope by Microsoft</a></h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p><a href="#">Read More</a></p>
-					</div>
-				</div>
-			</div>
+			
 			<div class="row">
+				@foreach($posts as $post)
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url({{asset('import/assets/images/project-1.jpg')}});"></a>
-						<div class="blog-text">
-							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-							<span class="posted_on">March. 15th</span>
-							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<a href="" class="blog-img-holder" style="background-image: url('image/posts/{{$post->imgid}}');"></a>
+						<div class="blog-text text-center">
+							<h3>{{$post->title}}</h3>
+							<span class="posted_on">{{$post->date}}</span>
+							
+							<p>{{$post->description}}</p>
+							<form action="/blogpost" method="post" enctype="multipart/form-data">
+                @csrf
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+					<input type="hidden" name="id" value="{{$post->id}}" />
+									
+							<span><button type="submit" class="btn btn-primary btn-sm ">Read More</button></span>
+							</form>
 						</div> 
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url({{asset('import/assets/images/project-2.jpg')}});"></a>
-						<div class="blog-text">
-							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-							<span class="posted_on">March. 15th</span>
-							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div> 
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url({{asset('import/assets/images/project-3.jpg')}});"></a>
-						<div class="blog-text">
-							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-							<span class="posted_on">March. 15th</span>
-							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div> 
-					</div>
-				</div>
+				@endforeach
+
 			</div>
 		</div>
 	</div>
@@ -348,7 +311,7 @@
 
 	<div id="fh5co-gallery" class="fh5co-bg-section">
 		<div class="row text-center">
-			<h2><span>Instagram Gallery</span></h2>
+			<h2><span>Gallery</span></h2>
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-padded">
@@ -366,63 +329,54 @@
 		</div>
 	</div>
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-image: url({{asset('import/assets/images/img_bg_4.jpg')}});">
+	
+
+	<footer id="fh5co-footer" class="fh5co-bg"  style="background-image: url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
-				<div class="col-md-3 fh5co-widget">
-					<h3>About Education</h3>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+				<div class="text-center col-md-3 fh5co-widget">
+					<h3>About KVTC</h3>
+					<p style="text-align: center;"><img src="image/kvtc-logo.ico"  width="50%"></p>
+					<p class="text-justify">Kawanthissa Vocational Training Center empowers individuals through high-quality education & training. Experienced instructors, innovative methods, and support services.</p>
 				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Learning</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Course</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
+				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+					<h3>Get in Touch</h3>
+					<ul class="fh5co-footer-links px-10">
+					
+						<li class="md-5"><i class="icon-phone"></i>&nbsp 047-2239039</li>
+						<br>
+						<li><i class="icon-mail"></i>&nbsp kvtcsrilanka@yahoo.co.in</li>
+						<br>
+						<li class="text-left"><i class="icon-location"></i>&nbsp Kawanthissa Vocational Training Center,
+Kataragama Road, Thissamaharama, Sri Lanka.</li>
+<br>
+						<li class="text-left"><i class="icon-libreoffice"></i>&nbsp Monday to Friday – 8:00 am to 3:45 pm
+(Saturday, Sunday & Public Holidays Closed)</li>
+						
 					</ul>
 				</div>
 
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Learn &amp; Grow</h3>
+				
+
+				<div class="col-md-4 col-sm-5 col-xs-5 col-md-push-2 fh5co-widget">
+					<h3 style="text-align: center">Engage us</h3>
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
+					<div style="text-align: center;" class="textwidget"><p><a href="" ><img decoding="async" class="aligncenter" title="State Ministry of Skills Development, Vocational Education, Research &amp; Innovation" src="image/tverrec.png" alt="State Ministry of Skills Development, Vocational Education, Research &amp; Innovation" width="30%"></a></p>
+<p style="text-align: center;">State Ministry of Skills Development,<br>
+Vocational Education, Research &amp; Innovation</p>
+</div>
 					</ul>
 				</div>
 
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Engage us</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Marketing</a></li>
-						<li><a href="#">Visual Assistant</a></li>
-						<li><a href="#">System Analysis</a></li>
-						<li><a href="#">Advertise</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-					<h3>Legal</h3>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
-					</ul>
-				</div>
 			</div>
+			
 
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
+						<small class="block">&copy; 2023 Vishsoft Solutions.</small> 
+						<small class="block">Designed by <a href="http://vishsoft.com/" target="_blank">vishsoft.com</a> </small>
 					</p>
 				</div>
 			</div>

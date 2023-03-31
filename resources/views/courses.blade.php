@@ -49,7 +49,7 @@
               <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="app-emailbox.html">Email</a>
+              <a class="nav-link" href="mail.yahoo.com">Email</a>
               </li>
              
             </ul>
@@ -155,7 +155,7 @@
             </li>
             <li>
               <a href="siteconfig" class="" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-grid"></i>
+                <div class="parent-icon"><i class="bi bi-gear"></i>
                 </div>
                 <div class="menu-title">Site Configurations</div>
               </a>
@@ -164,7 +164,7 @@
             
             <li>
               <a class="" href="courses" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-file-earmark-spreadsheet"></i>
+                <div class="parent-icon"><i class="bi bi-file-earmark-plus"></i>
                 </div>
                 <div class="menu-title">Courses</div>
               </a>
@@ -172,13 +172,28 @@
             </li>
             <li>
               <a class="" href="gallerydashboard" aria-expanded="false">
-                <div class="parent-icon"><i class="bi bi-file-earmark-spreadsheet"></i>
+                <div class="parent-icon"><i class="bi bi-image"></i>
                 </div>
                 <div class="menu-title">Gallery</div>
               </a>
              
             </li>  
-          
+            <li>
+              <a class="" href="teacherdash" aria-expanded="false">
+                <div class="parent-icon"><i class="bi bi-people"></i>
+                </div>
+                <div class="menu-title">Teachers</div>
+              </a>
+             
+            </li> 
+            <li>
+              <a class="" href="blogdash" aria-expanded="false">
+                <div class="parent-icon"><i class="bi bi-file-earmark-post"></i>
+                </div>
+                <div class="menu-title">Blog</div>
+              </a>
+             
+            </li> 
           </ul>
 
        </aside>
@@ -188,13 +203,13 @@
        <main class="page-content">
 				<!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Forms</div>
+					<div class="breadcrumb-title pe-3">Dashboard</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								<li class="breadcrumb-item"><a href="dashboard"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Form Elements</li>
+								<li class="breadcrumb-item active" aria-current="page">Courses</li>
 							</ol>
 						</nav>
 					</div>
@@ -299,7 +314,7 @@
         </div>
 						
 				<!--end row-->
- <p><a href="#" class="btn btn-primary" role="button">Save Features Cources</a></p>
+ 
 			</main>
        <!--end page main-->
 
