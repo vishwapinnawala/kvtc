@@ -13,6 +13,7 @@ use App\Http\Controllers\teacherdashcontroller;
 use App\Http\Controllers\blogdashcontroller;
 use App\Http\Controllers\blogscontroller;
 use App\Http\Controllers\blogpostscontroller;
+use App\Http\Controllers\contactscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,10 @@ Route::get('/gallery', function () {
 
 Route::controller(blogscontroller::class)->group(function () {
     Route::post('/blogpost', 'index');
+});
+
+Route::controller(contactscontroller::class)->group(function () {
+    Route::post('/sendmail', 'send');
 });
 
 Route::controller(blogpostscontroller::class)->group(function () {

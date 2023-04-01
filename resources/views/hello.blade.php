@@ -37,6 +37,7 @@
 	<link rel="stylesheet" href="{{asset('import/assets/css/icomoon.css')}}">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="{{asset('import/assets/css/bootstrap.css')}}">
+	<link href="{{asset('import/assets/css/logoslider.css')}}" rel="stylesheet" type="text/css" />
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="{{asset('import/assets/css/magnific-popup.css')}}">
@@ -90,8 +91,8 @@
 		<div class="top-menu">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="/"><i class="icon-study"></i>KVTC</a></div>
+					<div class="col-xs-2 ">
+						<div class="text-right" id="fh5co-logo"><a href="/"><img src="image/logos/kvtc.ico" width="40" >&nbsp&nbsp&nbspKVTC</a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -268,6 +269,21 @@
 		</div>
 	</div>
 
+	<div class="container">
+	<div class="row animate-box">
+	<div class="our-clients text-center fh5co-heading">
+	<h2>Our Partners</h2>
+  <ul>
+    <li> <img src="image/logos/dimo.png" alt=""> <img src="image/logos/dimo.png" alt=""> </li>
+    <li> <img src="image/logos/jetwing.jpeg" alt=""> <img src="image/logos/jetwing.jpeg" alt=""> </li>
+    <li> <img src="image/logos/wusc.png" alt=""> <img src="image/logos/wusc.png" alt=""> </li>
+    <li> <img src="images/4.png" alt=""> <img src="images/4-4.png" alt=""> </li>
+    <li> <img src="images/5.png" alt=""> <img src="images/5-5.png" alt=""> </li>
+    <li> <img src="images/6.png" alt=""> <img src="images/6-6.png" alt=""> </li>
+  </ul>
+</div>
+</div>
+</div>
 	
 
 	<div id="fh5co-blog">
@@ -311,7 +327,7 @@
 
 	<div id="fh5co-gallery" class="fh5co-bg-section">
 		<div class="row text-center">
-			<h2><span>Gallery</span></h2>
+			<h2 class="btn btn-primary btn-sm ">Gallery</h2>
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-padded">

@@ -88,7 +88,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="/"><i class="icon-study"></i>KVTC<span>.</span></a></div>
+					<div class="text-right" id="fh5co-logo"><a href="/"><img src="image/logos/kvtc.ico" width="40" >&nbsp&nbsp&nbspKVTC</a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -146,29 +146,31 @@ Kataragama Road, Thissamaharama, Sri Lanka.</li>
 				</div>
 				<div class="col-md-6 animate-box">
 					<h3>Get In Touch</h3>
-					<form action="#">
+					<form method="post" action="/sendmail">
+						  @csrf
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
-								<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+								<input name="firstname"  type="text" id="fname" class="form-control" placeholder="Your firstname">
 							</div>
 							<div class="col-md-6">
 								<!-- <label for="lname">Last Name</label> -->
-								<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+								<input name="lastname" type="text" id="lname" class="form-control" placeholder="Your lastname">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input type="text" id="email" class="form-control" placeholder="Your email address">
+								<input name="useremail" type="text" id="email" class="form-control" placeholder="Your email address">
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="subject">Subject</label> -->
-								<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+								<input name="subject" type="text" id="subject" class="form-control" placeholder="Your subject of this message">
 							</div>
 						</div>
 
