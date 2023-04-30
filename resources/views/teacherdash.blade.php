@@ -262,12 +262,12 @@
                     <form method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text" name="id" class="form-control" value="{{$data->id}}"></td>
-                   <td><input type="text"  name="name" class="form-control" value="{{$data->name}}"></td>
-                   <td><input type="text"  name="subject" class="form-control" value="{{$data->subject}}"></td>
-                   <td><input type="text"  name="description" class="form-control" value="{{$data->description}}"></td>
+                   <td class="d-none"><input type="text" required name="id" class="form-control" value="{{$data->id}}"></td>
+                   <td><input type="text" required name="name" class="form-control" value="{{$data->name}}"></td>
+                   <td><input type="text" required name="subject" class="form-control" value="{{$data->subject}}"></td>
+                   <td><input type="text" required name="description" class="form-control" value="{{$data->description}}"></td>
          
-                  <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:" /></td> 
+                  <td><input type="file" required class="form-control form-control-sm" id="imageid" name="imageid" style="display:" /></td> 
                    
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">
@@ -282,14 +282,14 @@
                     <form method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text" name="id" class="form-control" value=""></td>
-                   <td><input type="text"  name="name" class="form-control" value=""></td>
-                   <td><input type="text"  name="subject" class="form-control" value=""></td>
-                   <td><textarea class="form-control" name="description" id="exampleFormControlTextarea1" cols="100" rows="1"></textarea></td>
+                   
+                   <td><input type="text" required  name="name" class="form-control" value=""></td>
+                   <td><input type="text" required name="subject" class="form-control" value=""></td>
+                   <td><textarea class="form-control" required name="description" id="exampleFormControlTextarea1" cols="100" rows="1"></textarea></td>
 
                    
                    
-                   <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:;" required/></td> 
+                   <td><input type="file" required class="form-control form-control-sm" id="imageid" name="imageid" style="display:;" required/></td> 
                   
               
            

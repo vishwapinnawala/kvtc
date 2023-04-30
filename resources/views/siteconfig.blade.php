@@ -229,7 +229,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 									<label for="formFileMultiple" class="form-label">Add Background Images</label>
                                  
-								<input class="form-control" type="file" name="imageid[]" multiple>
+								<input class="form-control" type="file" name="imageid[]" multiple required>
                   <br>*Select at least 3 images
 <br><br>
  <p><input type="submit" class="btn btn-primary" role="button"></input></p>
@@ -247,21 +247,21 @@
                 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 									<label for="formFile" class="form-label">Vision</label>
-                  <textarea name="vision"   class="form-control" id="exampleFormControlTextarea1" rows="3">{{$vision[0]->vision}}</textarea>  
+                  <textarea name="vision"   class="form-control" id="exampleFormControlTextarea1" rows="3" required>{{$vision[0]->vision}}</textarea>  
 										</div>
                     <div class="mb-3">
 									<label for="formFile" class="form-label">Mission</label>
-                  <textarea name="mission"  class="form-control" id="exampleFormControlTextarea1" rows="3">{{$vision[0]->mission}}</textarea>
+                  <textarea name="mission"  class="form-control" id="exampleFormControlTextarea1" rows="3" required>{{$vision[0]->mission}}</textarea>
 										</div>
                     <br>
-    <label class="form-label" >Student Count</label>
-    <input name="sc1" value="{{$vision[0]->sc1}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
-    <label  class="form-label" >Student Count</label>
-    <input name="sc2" value="{{$vision[0]->sc2}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
-    <label class="form-label" >Student Count</label>
-    <input name="sc3" value="{{$vision[0]->sc3}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
-    <label class="form-label" >Student Count</label>
-    <input name="sc4" value="{{$vision[0]->sc4}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+    <label class="form-label" >Students Enrolled</label>
+    <input name="sc1" value="{{$vision[0]->sc1}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example" required>
+    <label  class="form-label" >Students Graduated</label>
+    <input name="sc2" value="{{$vision[0]->sc2}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example" required>
+    <label class="form-label" >Job Placements</label>
+    <input name="sc3" value="{{$vision[0]->sc3}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example" required>
+    <label class="form-label" >Course Catagories</label>
+    <input name="sc4" value="{{$vision[0]->sc4}}" class="form-control mb-3" type="text" placeholder="" aria-label=" example" required>
  
 								</div>
                 <div class="card-body">

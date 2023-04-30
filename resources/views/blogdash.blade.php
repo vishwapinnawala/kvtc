@@ -241,14 +241,14 @@
 									
                   <label class="form-label" >Title</label>
                   
-    <input name="title" value="" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+    <input required name="title" value="" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
     <label for="formFileMultiple" class="form-label">Add Post Images</label>
-								<input class="form-control" type="file" name="imageid">
+								<input required class="form-control" type="file" name="imageid">
                 <br>
                 <label class="form-label" >Description</label>           
-                  <input name="description" value="" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
+                  <input required name="description" value="" class="form-control mb-3" type="text" placeholder="" aria-label=" example">
                   <label class="form-label" >Body </label>   
-                  <textarea class="form-control" name="body" id="exampleFormControlTextarea1" cols="100" rows="15"></textarea>
+                  <textarea required class="form-control" name="body" id="exampleFormControlTextarea1" cols="100" rows="15"></textarea>
                 
                
    
@@ -289,14 +289,14 @@
                     <form method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text" name="id" class="form-control" value="{{$data->id}}"></td>
-                   <td><input type="text"  name="title" class="form-control" value="{{$data->title}}"></td>
-                   <td><input type="text"  name="description" class="form-control" value="{{$data->description}}"></td>
-                   <td><input type="text"  name="body" class="form-control" value="{{$data->body}}"></td>
-                   <td><input type="text"  name="date" class="form-control" value="{{$data->date}}"></td>
+                   <td class="d-none"><input required type="text" name="id" class="form-control" value="{{$data->id}}"></td>
+                   <td><input type="text" required name="title" class="form-control" value="{{$data->title}}"></td>
+                   <td><input type="text" required name="description" class="form-control" value="{{$data->description}}"></td>
+                   <td><input type="text" required name="body" class="form-control" value="{{$data->body}}"></td>
+                   <td><input type="text" required name="date" class="form-control" value="{{$data->date}}"></td>
                    
          
-                  <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid"  /></td> 
+                  <td><input required type="file" class="form-control form-control-sm" id="imageid" name="imageid"  /></td> 
                    
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">

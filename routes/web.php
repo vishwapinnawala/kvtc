@@ -34,9 +34,7 @@ Route::controller(indexcontroller::class)->group(function () {
     Route::get('/', 'index');
     //Route::post('/addcourse', 'store');
 });
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
 
 Route::get('/about', function () {
     return view('about');
@@ -78,6 +76,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 */
+Route::controller(siteconfigcontroller::class)->group(function () {
+    Route::get('/siteconfig', 'index')->middleware(['auth', 'verified'])->name('siteconfig');
+    Route::post('/addbg', 'store')->middleware(['auth', 'verified'])->name('siteconfig');
+    Route::post('/adddata', 'content')->middleware(['auth', 'verified'])->name('siteconfig');
+})->middleware(['auth', 'verified'])->name('siteconfig');
+
 Route::get('/dashboard', function () {
     $username=Auth::user()->name;
     $uemail=Auth::user()->email;
@@ -99,43 +103,40 @@ Route::get('/courses', function () {
 
 
 Route::controller(coursescontroller::class)->group(function () {
-    Route::get('/courses', 'index');
-    Route::post('/addcourse', 'store');
-    Route::post('/updatecourse', 'update');
-    Route::post('/deletecourse', 'destroy');
+    Route::get('/courses', 'index')->middleware(['auth', 'verified'])->name('courses');
+    Route::post('/addcourse', 'store')->middleware(['auth', 'verified'])->name('courses');
+    Route::post('/updatecourse', 'update')->middleware(['auth', 'verified'])->name('courses');
+    Route::post('/deletecourse', 'destroy')->middleware(['auth', 'verified'])->name('courses');
 })->middleware(['auth', 'verified'])->name('courses');
 
+
 Route::controller(blogdashcontroller::class)->group(function () {
-    Route::get('/blogdash', 'index');
-    Route::post('/addpost', 'store');
-    Route::post('/updatepost', 'update');
-    Route::post('/deletepost', 'destroy');
+    Route::get('/blogdash', 'index')->middleware(['auth', 'verified'])->name('blogdash');
+    Route::post('/addpost', 'store')->middleware(['auth', 'verified'])->name('blogdash');
+    Route::post('/updatepost', 'update')->middleware(['auth', 'verified'])->name('blogdash');
+    Route::post('/deletepost', 'destroy')->middleware(['auth', 'verified'])->name('blogdash');
 })->middleware(['auth', 'verified'])->name('blogdash');
 
 Route::controller(teacherdashcontroller::class)->group(function () {
-    Route::get('/teacherdash', 'index');
-    Route::post('/addteacher', 'store');
-    Route::post('/updateteacher', 'update');
-    Route::post('/deleteteacher', 'destroy');
+    Route::get('/teacherdash', 'index')->middleware(['auth', 'verified'])->name('teacherdash');
+    Route::post('/addteacher', 'store')->middleware(['auth', 'verified'])->name('teacherdash');
+    Route::post('/updateteacher', 'update')->middleware(['auth', 'verified'])->name('teacherdash');
+    Route::post('/deleteteacher', 'destroy')->middleware(['auth', 'verified'])->name('teacherdash');
 })->middleware(['auth', 'verified'])->name('teacherdash');
 
 
 
 Route::controller(gallerydashboardcontroller::class)->group(function () {
-    Route::get('/gallerydashboard', 'index');
-    Route::post('/imgdelete', 'delete');
-    Route::post('/imgadd', 'add');
+    Route::get('/gallerydashboard', 'index')->middleware(['auth', 'verified'])->name('gallerydashboard');
+    Route::post('/imgdelete', 'delete')->middleware(['auth', 'verified'])->name('gallerydashboard');
+    Route::post('/imgadd', 'add')->middleware(['auth', 'verified'])->name('gallerydashboard');
     //Route::post('/updatecourse', 'update');
     //Route::post('/deletecourse', 'destroy');
 })->middleware(['auth', 'verified'])->name('gallerydashboard');
 
 
 
-Route::controller(siteconfigcontroller::class)->group(function () {
-    Route::get('/siteconfig', 'index');
-    Route::post('/addbg', 'store');
-    Route::post('/adddata', 'content');
-})->middleware(['auth', 'verified'])->name('siteconfig');
+
 
 
 

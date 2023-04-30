@@ -17,7 +17,7 @@ class contactscontroller extends Controller
         $useremail = $request->useremail;
 
 
-        $email="vishwaspinnawala@gmail.com";
+        $email="kvtcsrilanka@yahoo.co.in";
         
 
         Mail::raw($messagee, function ($message) use ($email,$useremail,$fullname,$messagee){
@@ -28,6 +28,7 @@ class contactscontroller extends Controller
 
 
         
-
+        return redirect('/');
         }
+        
 }

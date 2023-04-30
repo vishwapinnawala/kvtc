@@ -191,50 +191,57 @@
 	<div id="fh5co-course-categories">
 		<div class="container">
 			<div class="row animate-box">
-			<div class="col-md-6 col-md-offset-3 text-center">
+			<div class="col-md-8 col-md-offset-2 text-center">
 				<div class="services">
 				<span class="icon">
-							<i class="icon-eye"></i>
+							<i class="icon-eye"></i><!--changes-logo-->
 						</span></div>
 					<h2 class="text-secondary" >Our Vision</h2>
-					<h4 class="text-muted">{{$vision[0]->vision}}</h4>
+					<h3 class="text-muted">{{$vision[0]->vision}}</h3>
 					<div class="services">
 				<span class="icon">
 							<i class="icon-flag"></i>
 						</span></div>
 					<h2 class="text-secondary">Our Mission</h2>
-					<h4 class="text-muted">{{$vision[0]->mission}}</h4>
+					<h3 class="text-muted">{{$vision[0]->mission}}</h3>
 				</div>
 			</div> 
 			
 		</div>
 	</div>
 
-	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url({{asset('import/assets/images/img_bg_4.jpg')}});" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
+	
+	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url({{asset('import/assets/images/img_bg_4.jpg')}});" >
+	
+	<div class="overlay"></div>
+	
+		<div class="container fh5co-heading">
+		
 			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
+				<div class=" col-md-10 col-md-offset-1">
+				<h1 style="color:white;  " class="text-center">Since 1988</h1>	
+				<br>
 					<div class="row">
+					
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-world"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc1}}" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="fh5co-counter-label">Foreign Followers</span>
+							<span class="fh5co-counter-label">Students Enrolled</span>
 						</div>
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-study"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc2}}" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="fh5co-counter-label">Students Enrolled</span>
+							<span class="fh5co-counter-label">Students Graduated</span>
 						</div>
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-bulb"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc3}}" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="fh5co-counter-label">Classes Complete</span>
+							<span class="fh5co-counter-label">Job Placements</span>
 						</div>
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-head"></i></span>
 							<span class="fh5co-counter js-counter" data-from="0" data-to="{{$vision[0]->sc4}}" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="fh5co-counter-label">Certified Teachers</span>
+							<span class="fh5co-counter-label">Course Catagories</span>
 						</div>
 					</div>
 				</div>
@@ -274,12 +281,15 @@
 	<div class="our-clients text-center fh5co-heading">
 	<h2>Our Partners</h2>
   <ul>
-    <li> <img src="image/logos/dimo.png" alt=""> <img src="image/logos/dimo.png" alt=""> </li>
+    
     <li> <img src="image/logos/jetwing.jpeg" alt=""> <img src="image/logos/jetwing.jpeg" alt=""> </li>
     <li> <img src="image/logos/wusc.png" alt=""> <img src="image/logos/wusc.png" alt=""> </li>
-    <li> <img src="images/4.png" alt=""> <img src="images/4-4.png" alt=""> </li>
-    <li> <img src="images/5.png" alt=""> <img src="images/5-5.png" alt=""> </li>
-    <li> <img src="images/6.png" alt=""> <img src="images/6-6.png" alt=""> </li>
+    <li> <img src="image/logos/care.png" alt=""> <img src="image/logos/care.png" alt=""> </li>
+    <li> <img src="image/logos/usaid.png" alt=""> <img src="image/logos/usaid.png" alt=""> </li>
+    <li> <img src="image/logos/childfund.png" alt=""> <img src="image/logos/childfund.png" alt=""> </li>
+	<li> <img src="image/logos/ulead.png" alt=""> <img src="image/logos/ulead.png" alt=""> </li>
+	<li> <img src="image/logos/naita.jpg" alt=""> <img src="image/logos/naita.jpg" alt=""> </li>
+	<li> <img src="image/logos/vec.jpg" alt=""> <img src="image/logos/vec.jpg" alt=""> </li>
   </ul>
 </div>
 </div>

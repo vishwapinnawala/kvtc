@@ -264,13 +264,13 @@
                     <form method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text" name="id" class="form-control" value="{{$data->id}}"></td>
-                   <td><input type="text"  name="name" class="form-control" value="{{$data->name}}"></td>
-                   <td><input type="text"  name="description" class="form-control" value="{{$data->description}}"></td>
-                   <td><input type="text"  name="nextintake" class="form-control" value="{{$data->nextintake}}"></td>
-                   <td><input type="text"  name="duration" class="form-control" value="{{$data->duration}}"></td>
-                   <td><input type="text"  name="level" class="form-control" value="{{$data->level}}"></td>
-                  <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:" /></td> 
+                   <td class="d-none"><input type="text" name="id" class="form-control" value="{{$data->id}}" required></td>
+                   <td><input type="text"  name="name" class="form-control" value="{{$data->name}}" required></td>
+                   <td><input type="text"  name="description" class="form-control" value="{{$data->description}}" required></td>
+                   <td><input type="text"  name="nextintake" class="form-control" value="{{$data->nextintake}}" required></td>
+                   <td><input type="text"  name="duration" class="form-control" value="{{$data->duration}}" required></td>
+                   <td><input type="text"  name="level" class="form-control" value="{{$data->level}}" required></td>
+                  <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:" required /></td> 
                    
                     <td>
                       <div class="table-actions d-flex align-items-center gap-3 fs-6">
@@ -285,14 +285,14 @@
                     <form method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                   <td class="d-none"><input type="text" name="id" class="form-control" value=""></td>
-                   <td><input type="text"  name="name" class="form-control" value=""></td>
-                   <td><textarea class="form-control" name="description" id="exampleFormControlTextarea1" cols="100" rows="1"></textarea></td>
+                   <td class="d-none"><input type="text" name="id" class="form-control" value="" required></td>
+                   <td><input type="text"  name="name" class="form-control" value="" required></td>
+                   <td><textarea class="form-control" name="description" id="exampleFormControlTextarea1" required cols="100" rows="1"></textarea></td>
 
-                   <td><input type="text"  name="nextintake" class="form-control" value=""></td>
-                   <td><input type="text"  name="duration" class="form-control" value=""></td>
-                   <td><input type="text"  name="level" class="form-control" value=""></td>
-                   <td><input type="file" class="form-control form-control-sm" id="imageid" name="imageid" style="display:;" required/></td> 
+                   <td><input type="text"  name="nextintake" class="form-control" required value=""></td>
+                   <td><input type="text"  name="duration" class="form-control" required value=""></td>
+                   <td><input type="text"  name="level" class="form-control" required value=""></td>
+                   <td><input type="file" class="form-control form-control-sm" required id="imageid" name="imageid" style="display:;" required/></td> 
                   
               
            
